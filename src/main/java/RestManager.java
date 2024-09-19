@@ -13,7 +13,7 @@ public class RestManager {
     private final List<TableOccupancy> partiallyFilledTables;
     private final Map<ClientsGroup, TableOccupancy> seatedGroups;
     private final PriorityQueue<ClientsGroup> waitingQueue;
-    private SeatingStrategy seatingStrategy;
+    private final SeatingStrategy seatingStrategy;
 
     public RestManager(List<Table> tables) {
         this.emptyTables = new TreeMap<>();
@@ -63,9 +63,5 @@ public class RestManager {
                 break;
             }
         }
-    }
-
-    public void setSeatingStrategy(SeatingStrategy strategy) {
-        this.seatingStrategy = strategy;
     }
 }
